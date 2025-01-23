@@ -179,11 +179,11 @@ function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center mb-8">
           <div className="flex items-center space-x-3 mb-4 md:mb-0">
             <img
-              src="https://image11112024.s3.eu-north-1.amazonaws.com/WhatsApp+Image+2025-01-23+at+11.39.08_b731f59f.jpg"
+              src="https://image11112024.s3.eu-north-1.amazonaws.com/final_logo.png"
               alt="Gulf Coast Capital Logo"
               className="w-10 h-10 object-contain rounded-full"
             />
-            <span className="text-xl font-bold bg-gradient-to-r from-teal-400 to-emerald-400 bg-clip-text text-transparent">
+            <span className="text-xl font-bold tracking-wide">
               Gulf Coast Capital & Investment
             </span>
           </div>
