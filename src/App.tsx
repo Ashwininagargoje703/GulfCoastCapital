@@ -318,7 +318,7 @@ function Footer() {
               <a
                 key={item}
                 href={`#${item.toLowerCase()}`}
-                className="text-gray-400 hover:text-blue-400 transition-colors"
+                className="text-gray-400 hover:text-blue-400 transition-colors bg-gradient-to-r from-blue-400 via-blue-300 to-blue-200 bg-clip-text text-transparent tracking-wide shadow-lg"
               >
                 {item}
               </a>
