@@ -148,7 +148,7 @@ function HeroSection() {
         </div>
       </section>
 
-      <div className="mt-[-18rem] sm:mt-[-5rem]">
+      {/* <div className="mt-[-18rem] sm:mt-[-5rem]">
         <marquee
           className="text-5xl sm:text-5xl md:text-5xl font-bold text-white"
           behavior="scroll"
@@ -158,7 +158,7 @@ function HeroSection() {
         >
           Coming Soon!
         </marquee>
-      </div>
+      </div> */}
     </>
   );
 }
@@ -298,15 +298,20 @@ function Footer() {
     <footer className="py-12 bg-blue-950/20">
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-center mb-8">
-          <div className="flex items-center space-x-3 mb-4 md:mb-0">
+        <div className="flex items-center space-x-4">
             <img
               src="https://image11112024.s3.eu-north-1.amazonaws.com/Gulf+only+logo.png"
               alt="Gulf Coast Capital Logo"
-              className="w-20 h-20 object-contain"
+              className="w-16 h-16 md:w-20 md:h-20 object-contain hover:scale-110 transition-transform duration-300"
             />
-            <span className="text-lg md:text-xl font-bold tracking-wide">
-              Gulf Coast Capital <br /> & Investment
-            </span>
+            <div className="font-bold leading-tight">
+              <div className="text-lg sm:text-2xl md:text-3xl bg-gradient-to-r from-blue-400 via-blue-300 to-blue-200 bg-clip-text text-transparent tracking-wide shadow-lg">
+                Gulf Coast Capital
+              </div>
+              <div className="text-sm sm:text-lg md:text-xl bg-gradient-to-r from-blue-300 via-blue-200 to-blue-100 bg-clip-text text-transparent tracking-wide">
+                & Investment
+              </div>
+            </div>
           </div>
           <div className="flex space-x-6">
             {["Home", "About Us", "Services", "Contact Us"].map((item) => (
