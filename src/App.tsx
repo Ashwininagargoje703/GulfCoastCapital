@@ -53,25 +53,28 @@ function Navbar() {
             <img
               src="https://image11112024.s3.eu-north-1.amazonaws.com/Gulf+only+logo.png"
               alt="Gulf Coast Capital Logo"
-              className="w-26 h-24"
+              className="w-16 h-16 md:w-20 md:h-20 object-contain hover:scale-110 transition-transform duration-300"
             />
-            <div className="font-bold">
-              <div className="text-[18px] tracking-wider leading-tight bg-gradient-to-r from-white via-blue-100 to-blue-200 bg-clip-text text-transparent">
+            <div className="font-bold leading-tight">
+              <div className="text-lg sm:text-2xl md:text-3xl bg-gradient-to-r from-blue-400 via-blue-300 to-blue-200 bg-clip-text text-transparent tracking-wide shadow-lg">
                 Gulf Coast Capital
               </div>
-              <div className="text-[18px] tracking-wide bg-gradient-to-r from-white via-blue-100 to-blue-200 bg-clip-text text-transparent">
-                &amp; Investment
+              <div className="text-sm sm:text-lg md:text-xl bg-gradient-to-r from-blue-300 via-blue-200 to-blue-100 bg-clip-text text-transparent tracking-wide">
+                & Investment
               </div>
             </div>
           </div>
 
           {/* Navigation Links for Larger Screens */}
           <div className="hidden md:flex space-x-6">
-            {["About", "Services", "Why Us",].map((item) => (
+            {["About", "Services", "Why Us"].map((item) => (
               <button
                 key={item}
-                onClick={() => handleScroll(`#${item.toLowerCase().replace(" ", "-")}`)}
-              
+                onClick={() =>
+                  handleScroll(`#${item.toLowerCase().replace(" ", "-")}`)
+                  
+                }
+                className="text-gray-400 hover:text-blue-400 transition-colors"
               >
                 {item}
               </button>
@@ -99,10 +102,12 @@ function Navbar() {
         } transition-transform duration-300 w-3/4 sm:w-1/2 md:hidden`}
       >
         <div className="flex flex-col space-y-6 p-6">
-          {["About", "Services", "Why Us", ].map((item) => (
+          {["About", "Services", "Why Us"].map((item) => (
             <button
               key={item}
-              onClick={() => handleScroll(`#${item.toLowerCase().replace(" ", "-")}`)}
+              onClick={() =>
+                handleScroll(`#${item.toLowerCase().replace(" ", "-")}`)
+              }
               className="text-white text-lg "
             >
               {item}
@@ -181,13 +186,13 @@ function AboutSection() {
             provide tailored solutions that drive long-term growth and security.
           </p>
 
-      <div style={{justifyContent:"center", display:"flex"}}>
-      <Button
-            text="Learn More About Us"
-            icon={<ArrowRight className="w-5 h-5" />}
-            primary
-          />
-      </div>
+          <div style={{ justifyContent: "center", display: "flex" }}>
+            <Button
+              text="Learn More About Us"
+              icon={<ArrowRight className="w-5 h-5" />}
+              primary
+            />
+          </div>
         </div>
       </div>
     </section>
@@ -300,7 +305,7 @@ function Footer() {
               className="w-20 h-20 object-contain"
             />
             <span className="text-lg md:text-xl font-bold tracking-wide">
-              Gulf Coast Capital   <br /> & Investment
+              Gulf Coast Capital <br /> & Investment
             </span>
           </div>
           <div className="flex space-x-6">
