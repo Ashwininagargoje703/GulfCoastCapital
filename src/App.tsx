@@ -74,7 +74,7 @@ function Navbar() {
                   handleScroll(`#${item.toLowerCase().replace(" ", "-")}`)
                   
                 }
-                className="text-gray-400 hover:text-blue-400 transition-colors"
+                className="text-gray-500  bg-gradient-to-r from-blue-500 via-blue-300 to-blue-200 bg-clip-text text-transparent tracking-wide shadow-lg hover:text-blue-400 transition-colors "
               >
                 {item}
               </button>
@@ -171,7 +171,7 @@ function AboutSection() {
       className="py-12 md:py-20 bg-gradient-to-b from-black via-blue-950/20 to-black"
     >
       <div className="container mx-auto px-6">
-        <h2 className="text-3xl sm:text-4xl font-bold mb-10 md:mb-16 text-center">
+        <h2 className="text-3xl sm:text-4xl font-bold mb-10 md:mb-16 text-center bg-gradient-to-r from-blue-400 via-blue-300 to-blue-200 bg-clip-text text-transparent tracking-wide shadow-lg">
           Who We Are
         </h2>
         <div className="max-w-4xl mx-auto text-center">
@@ -232,7 +232,7 @@ function ServicesSection() {
   return (
     <section id="services" className="py-12 md:py-20 bg-black">
       <div className="container mx-auto px-6">
-        <h2 className="text-3xl sm:text-4xl font-bold mb-10 md:mb-16 text-center">
+        <h2 className="text-3xl sm:text-4xl font-bold mb-10 md:mb-16 text-center bg-gradient-to-r from-blue-400 via-blue-300 to-blue-200 bg-clip-text text-transparent tracking-wide shadow-lg">
           Our Expertise
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -279,7 +279,7 @@ function WhyUsSection() {
       className="py-12 md:py-20 bg-gradient-to-b from-black via-blue-950/20 to-black"
     >
       <div className="container mx-auto px-6">
-        <h2 className="text-3xl sm:text-4xl font-bold mb-10 md:mb-16 text-center">
+        <h2 className="text-3xl sm:text-4xl font-bold mb-10 md:mb-16 text-center bg-gradient-to-r from-blue-400 via-blue-300 to-blue-200 bg-clip-text text-transparent tracking-wide shadow-lg">
           Why Gulf Coast Capital & Investment?
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
