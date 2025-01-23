@@ -67,10 +67,10 @@ function Navbar() {
 
           {/* Navigation Links for Larger Screens */}
           <div className="hidden md:flex space-x-6">
-            {["About", "Services", "Why Us", "Contact"].map((item) => (
+            {["About", "Services", "Why Us",].map((item) => (
               <button
                 key={item}
-                onClick={() => handleScroll(`#${item.toLowerCase()}`)}
+                onClick={() => handleScroll(`#${item.toLowerCase().replace(" ", "-")}`)}
               
               >
                 {item}
@@ -99,10 +99,10 @@ function Navbar() {
         } transition-transform duration-300 w-3/4 sm:w-1/2 md:hidden`}
       >
         <div className="flex flex-col space-y-6 p-6">
-          {["About", "Services", "Why Us", "Contact"].map((item) => (
+          {["About", "Services", "Why Us", ].map((item) => (
             <button
               key={item}
-              onClick={() => handleScroll(`#${item.toLowerCase()}`)}
+              onClick={() => handleScroll(`#${item.toLowerCase().replace(" ", "-")}`)}
               className="text-white text-lg "
             >
               {item}
