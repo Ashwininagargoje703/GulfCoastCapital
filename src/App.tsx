@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   ArrowRight,
   ChevronRight,
@@ -9,6 +9,7 @@ import {
   PiggyBank,
   Users,
   Star,
+  Menu, X
 } from "lucide-react";
 
 // Main App Component
@@ -27,101 +28,140 @@ function App() {
 
 // Navbar Component
 function Navbar() {
+  const [drawerOpen, setDrawerOpen] = useState(false);
+
+  const toggleDrawer = () => {
+    setDrawerOpen(!drawerOpen);
+  };
+
+  // Function for scrolling to a section
+  const handleScroll = (id) => {
+    const section = document.querySelector(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+    setDrawerOpen(false); // Close the drawer after clicking a link
+  };
+
   return (
-    <nav className="fixed w-full z-50  bg-black ">
-      <div className="container mx-auto ">
-        <div className="flex justify-between items-center">
+    <nav className="fixed w-full z-50 bg-black">
+      <div className="container mx-auto px-4 md:px-1">
+        <div className="flex justify-between items-center py-1">
           {/* Logo and Title */}
           <div className="flex items-center space-x-4">
-            <div >
-              <img
-                src="https://image11112024.s3.eu-north-1.amazonaws.com/Gulf+image+7.png"
-                alt="Gulf Coast Capital Logo"
-            style={{width:"150px" , height:"100px"}}
-              />
-              <div className="absolute inset-0 "></div>
-            </div>
+            <img
+              src="https://image11112024.s3.eu-north-1.amazonaws.com/Gulf+only+logo.png"
+              alt="Gulf Coast Capital Logo"
+              className="w-26 h-24"
+            />
             <div className="font-bold">
-              <div className="text-4xl md:text-3xl leading-tight bg-gradient-to-r from-white via-blue-100 to-blue-200 bg-clip-text text-transparent ">Gulf Coast Capital</div>
-              <div className="text-sm tracking-wider leading-tight bg-gradient-to-r from-white via-blue-100 to-blue-200 bg-clip-text text-transparent">&amp; INVESTMENT</div>
+              <div className="text-sm tracking-wider leading-tight bg-gradient-to-r from-white via-blue-100 to-blue-200 bg-clip-text text-transparent">
+                Gulf Coast Capital
+              </div>
+              <div className="text-sm tracking-wide bg-gradient-to-r from-white via-blue-100 to-blue-200 bg-clip-text text-transparent">
+                &amp; INVESTMENT
+              </div>
             </div>
           </div>
 
-          {/* Navigation Links */}
-          <div className="hidden md:flex space-x-8">
+          {/* Navigation Links for Larger Screens */}
+          <div className="hidden md:flex space-x-6">
             {["About", "Services", "Why Us", "Contact"].map((item) => (
-              <a
+              <button
                 key={item}
-                href={`#${item.toLowerCase()}`}
+                onClick={() => handleScroll(`#${item.toLowerCase()}`)}
                 className="hover:text-emerald-400 transition-colors"
               >
                 {item}
-              </a>
+              </button>
             ))}
           </div>
+
+          {/* Hamburger Menu Button for Mobile */}
+          <button
+            className="text-white md:hidden focus:outline-none"
+            onClick={toggleDrawer}
+          >
+            {drawerOpen ? <X className="w-8 h-8" /> : <Menu className="w-8 h-8" />}
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile Drawer */}
+      <div
+        className={`fixed top-0 right-0 h-full bg-black shadow-lg transform ${
+          drawerOpen ? "translate-x-0" : "translate-x-full"
+        } transition-transform duration-300 w-3/4 sm:w-1/2 md:hidden`}
+      >
+        <div className="flex flex-col space-y-6 p-6">
+          {["About", "Services", "Why Us", "Contact"].map((item) => (
+            <button
+              key={item}
+              onClick={() => handleScroll(`#${item.toLowerCase()}`)}
+              className="text-white text-lg hover:text-emerald-400 transition-colors"
+            >
+              {item}
+            </button>
+          ))}
         </div>
       </div>
     </nav>
   );
 }
 
+
 // Hero Section
 function HeroSection() {
   return (
     <>
-    <section className="relative min-h-screen">
-      {/* Background */}
-      <div className="absolute inset-0">
-        <img
-          src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2000"
-          alt="Modern cityscape"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-transparent"></div>
-      </div>
+      <section className="relative min-h-screen">
+        {/* Background */}
+        <div className="absolute inset-0">
+          <img
+            src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2000"
+            alt="Modern cityscape"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-transparent"></div>
+        </div>
 
-      {/* Marquee */}
- 
-
-      {/* Hero Content */}
-      <div className="relative min-h-screen container mx-auto px-6 flex items-center z-10">
-        <div className="max-w-4xl">
-          <h1 className="text-6xl md:text-8xl font-bold mb-8 leading-tight bg-gradient-to-r from-white via-blue-100 to-blue-200 bg-clip-text text-transparent">
-            Empowering Your Financial Growth
-          </h1>
-          <p className="text-2xl md:text-3xl mb-8 text-blue-100 font-light">
-            Strategic Investment Solutions to Build, Grow, and Secure Your
-            Wealth.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4">
-            <Button
-              text="Schedule a Free Consultation"
-              icon={<ArrowRight className="w-5 h-5" />}
-              primary
-            />
-            <Button
-              text="Explore Our Services"
-              icon={<ChevronRight className="w-5 h-5" />}
-            />
+        {/* Hero Content */}
+        <div className="relative container mx-auto px-6 flex items-center min-h-screen">
+          <div className="max-w-4xl text-center sm:text-left">
+            <h1 className="text-5xl sm:text-6xl md:text-8xl font-bold mb-8 bg-gradient-to-r from-white via-blue-100 to-blue-200 bg-clip-text text-transparent">
+              Empowering Your Financial Growth
+            </h1>
+            <p className="text-lg sm:text-2xl md:text-3xl mb-8 text-blue-100 font-light">
+              Strategic Investment Solutions to Build, Grow, and Secure Your
+              Wealth.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center sm:justify-start">
+              <Button
+                text="Schedule a Free Consultation"
+                icon={<ArrowRight className="w-5 h-5" />}
+                primary
+              />
+              <Button
+                text="Explore Our Services"
+                icon={<ChevronRight className="w-5 h-5" />}
+              />
+            </div>
           </div>
         </div>
+      </section>
+
+      <div style={{ marginTop: "-5rem" }}>
+        <marquee
+          className="text-lg sm:text-3xl md:text-5xl font-bold text-white"
+          behavior="scroll"
+          direction="left"
+          scrollamount="12"
+          style={{ height: "60px" }}
+        >
+          Coming Soon!
+        </marquee>
       </div>
-
-    
-    </section>
-
-<div style={{marginTop:"-5rem"}}>
-<marquee
-  className="text-xl md:text-5xl font-bold text-white animate-marquee-400"
-  behavior="scroll"
-  direction="left"
-  scrollamount="18" // Increase this number for faster scrolling
-  style={{ height: "60px" }}
->
-  Coming Soon!
-</marquee>
-</div>
-</>
+    </>
   );
 }
 
@@ -130,12 +170,14 @@ function AboutSection() {
   return (
     <section
       id="about"
-      className="py-20 bg-gradient-to-b from-black via-blue-950/20 to-black"
+      className="py-12 md:py-20 bg-gradient-to-b from-black via-blue-950/20 to-black"
     >
       <div className="container mx-auto px-6">
-        <h2 className="text-4xl font-bold mb-16 text-center">Who We Are</h2>
+        <h2 className="text-3xl sm:text-4xl font-bold mb-10 md:mb-16 text-center">
+          Who We Are
+        </h2>
         <div className="max-w-4xl mx-auto text-center">
-          <p className="text-xl text-gray-300 mb-8 leading-relaxed">
+          <p className="text-lg sm:text-xl text-gray-300 mb-8 leading-relaxed">
             Gulf Coast Capital & Investment is a trusted partner in your
             financial journey. With years of expertise in asset management,
             private equity, and investment advisory, we help individuals and
@@ -184,20 +226,15 @@ function ServicesSection() {
   ];
 
   return (
-    <section id="services" className="py-20 bg-black">
+    <section id="services" className="py-12 md:py-20 bg-black">
       <div className="container mx-auto px-6">
-        <h2 className="text-4xl font-bold mb-16 text-center">Our Expertise</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <h2 className="text-3xl sm:text-4xl font-bold mb-10 md:mb-16 text-center">
+          Our Expertise
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <ServiceCard key={index} {...service} />
           ))}
-          <div className="bg-blue-600/10 p-8 rounded-lg border border-blue-500/20 hover:border-blue-500/40 transition-colors group">
-            <Button
-              text="Explore All Services"
-              icon={<ChevronRight className="w-8 h-8" />}
-              link
-            />
-          </div>
         </div>
       </div>
     </section>
@@ -215,33 +252,30 @@ function WhyUsSection() {
     {
       icon: <Star className="w-6 h-6" />,
       title: "Proven Expertise",
-      description:
-        "Decades of experience in financial planning and investments.",
+      description: "Decades of experience in financial planning and investments.",
     },
     {
       icon: <Shield className="w-6 h-6" />,
       title: "Transparency & Trust",
-      description:
-        "We believe in building relationships based on honesty and clarity.",
+      description: "We believe in building relationships based on honesty and clarity.",
     },
     {
       icon: <Briefcase className="w-6 h-6" />,
       title: "Diverse Portfolio",
-      description:
-        "Access a wide range of investment opportunities tailored to your goals.",
+      description: "Access a wide range of investment opportunities tailored to your goals.",
     },
   ];
 
   return (
     <section
       id="why-us"
-      className="py-20 bg-gradient-to-b from-black via-blue-950/20 to-black"
+      className="py-12 md:py-20 bg-gradient-to-b from-black via-blue-950/20 to-black"
     >
       <div className="container mx-auto px-6">
-        <h2 className="text-4xl font-bold mb-16 text-center">
+        <h2 className="text-3xl sm:text-4xl font-bold mb-10 md:mb-16 text-center">
           Why Gulf Coast Capital & Investment?
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
           {features.map((feature, index) => (
             <FeatureCard key={index} {...feature} />
           ))}
@@ -261,9 +295,9 @@ function Footer() {
             <img
               src="https://image11112024.s3.eu-north-1.amazonaws.com/final_logo.png"
               alt="Gulf Coast Capital Logo"
-              className="w-20 h-20 object-contain "
+              className="w-20 h-20 object-contain"
             />
-            <span className="text-xl font-bold tracking-wide">
+            <span className="text-lg md:text-xl font-bold tracking-wide">
               Gulf Coast Capital & Investment
             </span>
           </div>
@@ -290,7 +324,7 @@ function Footer() {
 // Reusable Components
 function Button({ text, icon, primary, link }) {
   const baseClasses =
-    "px-8 py-4 rounded-lg text-lg font-semibold flex items-center justify-center space-x-2 transition-colors";
+    "px-6 py-3 rounded-lg text-lg font-semibold flex items-center justify-center space-x-2 transition-colors";
   const primaryClasses = "bg-blue-600 hover:bg-blue-700 text-white";
   const secondaryClasses =
     "border border-blue-400 hover:bg-blue-600/10 text-white";
@@ -311,9 +345,9 @@ function Button({ text, icon, primary, link }) {
 
 function ServiceCard({ icon, title, description }) {
   return (
-    <div className="bg-blue-600/10 p-8 rounded-lg border border-blue-500/20 hover:border-blue-500/40 transition-colors">
+    <div className="bg-blue-600/10 p-6 rounded-lg border border-blue-500/20 hover:border-blue-500/40 transition-colors">
       <div className="text-blue-400 mb-4">{icon}</div>
-      <h3 className="text-xl font-semibold mb-2">{title}</h3>
+      <h3 className="text-lg font-semibold mb-2">{title}</h3>
       <p className="text-gray-400">{description}</p>
     </div>
   );
