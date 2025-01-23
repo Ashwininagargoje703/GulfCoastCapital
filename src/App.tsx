@@ -9,7 +9,8 @@ import {
   PiggyBank,
   Users,
   Star,
-  Menu, X
+  Menu,
+  X,
 } from "lucide-react";
 
 // Main App Component
@@ -55,11 +56,11 @@ function Navbar() {
               className="w-26 h-24"
             />
             <div className="font-bold">
-              <div className="text-sm tracking-wider leading-tight bg-gradient-to-r from-white via-blue-100 to-blue-200 bg-clip-text text-transparent">
+              <div className="text-[18px] tracking-wider leading-tight bg-gradient-to-r from-white via-blue-100 to-blue-200 bg-clip-text text-transparent">
                 Gulf Coast Capital
               </div>
-              <div className="text-sm tracking-wide bg-gradient-to-r from-white via-blue-100 to-blue-200 bg-clip-text text-transparent">
-                &amp; INVESTMENT
+              <div className="text-[18px] tracking-wide bg-gradient-to-r from-white via-blue-100 to-blue-200 bg-clip-text text-transparent">
+                &amp; Investment
               </div>
             </div>
           </div>
@@ -70,7 +71,7 @@ function Navbar() {
               <button
                 key={item}
                 onClick={() => handleScroll(`#${item.toLowerCase()}`)}
-                className="hover:text-emerald-400 transition-colors"
+              
               >
                 {item}
               </button>
@@ -82,7 +83,11 @@ function Navbar() {
             className="text-white md:hidden focus:outline-none"
             onClick={toggleDrawer}
           >
-            {drawerOpen ? <X className="w-8 h-8" /> : <Menu className="w-8 h-8" />}
+            {drawerOpen ? (
+              <X className="w-8 h-8" />
+            ) : (
+              <Menu className="w-8 h-8" />
+            )}
           </button>
         </div>
       </div>
@@ -98,7 +103,7 @@ function Navbar() {
             <button
               key={item}
               onClick={() => handleScroll(`#${item.toLowerCase()}`)}
-              className="text-white text-lg hover:text-emerald-400 transition-colors"
+              className="text-white text-lg "
             >
               {item}
             </button>
@@ -108,7 +113,6 @@ function Navbar() {
     </nav>
   );
 }
-
 
 // Hero Section
 function HeroSection() {
@@ -135,24 +139,13 @@ function HeroSection() {
               Strategic Investment Solutions to Build, Grow, and Secure Your
               Wealth.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center sm:justify-start">
-              <Button
-                text="Schedule a Free Consultation"
-                icon={<ArrowRight className="w-5 h-5" />}
-                primary
-              />
-              <Button
-                text="Explore Our Services"
-                icon={<ChevronRight className="w-5 h-5" />}
-              />
-            </div>
           </div>
         </div>
       </section>
 
-      <div style={{ marginTop: "-5rem" }}>
+      <div className="mt-[-18rem] sm:mt-[-5rem]">
         <marquee
-          className="text-lg sm:text-3xl md:text-5xl font-bold text-white"
+          className="text-5xl sm:text-5xl md:text-5xl font-bold text-white"
           behavior="scroll"
           direction="left"
           scrollamount="12"
@@ -177,18 +170,24 @@ function AboutSection() {
           Who We Are
         </h2>
         <div className="max-w-4xl mx-auto text-center">
-          <p className="text-lg sm:text-xl text-gray-300 mb-8 leading-relaxed">
+          <p
+            className=" text-gray-300 mb-8 leading-relaxed"
+            style={{ fontSize: "18px" }}
+          >
             Gulf Coast Capital & Investment is a trusted partner in your
             financial journey. With years of expertise in asset management,
             private equity, and investment advisory, we help individuals and
             businesses achieve their financial aspirations. Our mission is to
             provide tailored solutions that drive long-term growth and security.
           </p>
-          <Button
+
+      <div style={{justifyContent:"center", display:"flex"}}>
+      <Button
             text="Learn More About Us"
-            icon={<ChevronRight className="w-5 h-5" />}
-            link
+            icon={<ArrowRight className="w-5 h-5" />}
+            primary
           />
+      </div>
         </div>
       </div>
     </section>
@@ -252,17 +251,20 @@ function WhyUsSection() {
     {
       icon: <Star className="w-6 h-6" />,
       title: "Proven Expertise",
-      description: "Decades of experience in financial planning and investments.",
+      description:
+        "Decades of experience in financial planning and investments.",
     },
     {
       icon: <Shield className="w-6 h-6" />,
       title: "Transparency & Trust",
-      description: "We believe in building relationships based on honesty and clarity.",
+      description:
+        "We believe in building relationships based on honesty and clarity.",
     },
     {
       icon: <Briefcase className="w-6 h-6" />,
       title: "Diverse Portfolio",
-      description: "Access a wide range of investment opportunities tailored to your goals.",
+      description:
+        "Access a wide range of investment opportunities tailored to your goals.",
     },
   ];
 
@@ -293,12 +295,12 @@ function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center mb-8">
           <div className="flex items-center space-x-3 mb-4 md:mb-0">
             <img
-              src="https://image11112024.s3.eu-north-1.amazonaws.com/final_logo.png"
+              src="https://image11112024.s3.eu-north-1.amazonaws.com/Gulf+only+logo.png"
               alt="Gulf Coast Capital Logo"
               className="w-20 h-20 object-contain"
             />
             <span className="text-lg md:text-xl font-bold tracking-wide">
-              Gulf Coast Capital & Investment
+              Gulf Coast Capital   <br /> & Investment
             </span>
           </div>
           <div className="flex space-x-6">
