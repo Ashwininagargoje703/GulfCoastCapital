@@ -35,7 +35,7 @@ function Navbar() {
           <div className="flex items-center space-x-4">
             <div >
               <img
-                src="https://image11112024.s3.eu-north-1.amazonaws.com/Gulf+image+6.png"
+                src="https://image11112024.s3.eu-north-1.amazonaws.com/Gulf+image+7.png"
                 alt="Gulf Coast Capital Logo"
             style={{width:"150px" , height:"100px"}}
               />
