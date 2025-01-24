@@ -57,10 +57,10 @@ function Navbar() {
             />
             <div className="font-bold leading-tight">
               <div className="text-lg sm:text-2xl md:text-3xl bg-gradient-to-r from-blue-400 via-blue-300 to-blue-200 bg-clip-text text-transparent tracking-wide shadow-lg">
-                Global Coast Capital
+                 | Global Cost 
               </div>
               <div className="text-sm sm:text-lg md:text-xl bg-gradient-to-r from-blue-300 via-blue-200 to-blue-100 bg-clip-text text-transparent tracking-wide">
-                & Investment
+              Capital and Investment |
               </div>
             </div>
           </div>
@@ -306,10 +306,10 @@ function Footer() {
             />
             <div className="font-bold leading-tight">
               <div className="text-lg sm:text-2xl md:text-3xl bg-gradient-to-r from-blue-400 via-blue-300 to-blue-200 bg-clip-text text-transparent tracking-wide shadow-lg">
-                Global Coast Capital
+              | Global Cost 
               </div>
               <div className="text-sm sm:text-lg md:text-xl bg-gradient-to-r from-blue-300 via-blue-200 to-blue-100 bg-clip-text text-transparent tracking-wide">
-                & Investment
+              Capital and Investment |
               </div>
             </div>
           </div>
