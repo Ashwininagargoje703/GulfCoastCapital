@@ -49,20 +49,19 @@ function Navbar() {
       <div className="container mx-auto px-4 md:px-1">
         <div className="flex justify-between items-center py-1">
           {/* Logo and Title */}
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-2">
             <img
               src="https://image11112024.s3.eu-north-1.amazonaws.com/Gulf+only+logo.png"
               alt="Global Coast Capital Logo"
               className="w-16 h-16 md:w-20 md:h-20 object-contain hover:scale-110 transition-transform duration-300"
             />
-            <div className="font-bold leading-tight">
-              <div className="text-lg sm:text-2xl md:text-3xl bg-gradient-to-r from-blue-400 via-blue-300 to-blue-200 bg-clip-text text-transparent tracking-wide shadow-lg">
-                 | Global Cost 
+              <div className="w-full  font-bold h-full border-l-2 border-r-2 border-white flex flex-col items-start justify-center px-2">
+                <div className="text-md sm:text-xl md:text-xl bold bg-gradient-to-r from-blue-400 via-blue-300 to-blue-200 bg-clip-text text-transparent tracking-wide shadow-lg ml-2">
+                  Global Coast <br /> 
+                  Capital and Investment
+                </div>
+              
               </div>
-              <div className="text-sm sm:text-lg md:text-xl bg-gradient-to-r from-blue-300 via-blue-200 to-blue-100 bg-clip-text text-transparent tracking-wide">
-              Capital and Investment |
-              </div>
-            </div>
           </div>
 
           {/* Navigation Links for Larger Screens */}
@@ -72,7 +71,6 @@ function Navbar() {
                 key={item}
                 onClick={() =>
                   handleScroll(`#${item.toLowerCase().replace(" ", "-")}`)
-                  
                 }
                 className="text-gray-500  bg-gradient-to-r from-blue-500 via-blue-300 to-blue-200 bg-clip-text text-transparent tracking-wide shadow-lg hover:text-blue-400 transition-colors "
               >
@@ -298,18 +296,22 @@ function Footer() {
     <footer className="py-12 bg-blue-950/20">
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-center mb-8">
-        <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-4">
             <img
               src="https://image11112024.s3.eu-north-1.amazonaws.com/Gulf+only+logo.png"
               alt="Global Coast Capital Logo"
               className="w-16 h-16 md:w-20 md:h-20 object-contain hover:scale-110 transition-transform duration-300"
             />
-            <div className="font-bold leading-tight">
-              <div className="text-lg sm:text-2xl md:text-3xl bg-gradient-to-r from-blue-400 via-blue-300 to-blue-200 bg-clip-text text-transparent tracking-wide shadow-lg">
-              | Global Cost 
-              </div>
-              <div className="text-sm sm:text-lg md:text-xl bg-gradient-to-r from-blue-300 via-blue-200 to-blue-100 bg-clip-text text-transparent tracking-wide">
-              Capital and Investment |
+
+            <div
+              className="font-bold leading-tight flex items-center justify-center"
+              style={{ width: "100%", height: "3rem", paddingLeft: "0.4rem" }}
+            >
+              <div className="w-full h-full border-l-2 border-r-2 border-white flex flex-col items-start justify-center px-2">
+              <div className="text-md sm:text-xl md:text-xl bold bg-gradient-to-r from-blue-400 via-blue-300 to-blue-200 bg-clip-text text-transparent tracking-wide shadow-lg ml-2">
+                  Global Coast <br /> 
+                  Capital and Investment
+                </div>
               </div>
             </div>
           </div>
