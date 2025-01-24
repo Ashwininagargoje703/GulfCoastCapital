@@ -52,12 +52,12 @@ function Navbar() {
           <div className="flex items-center space-x-4">
             <img
               src="https://image11112024.s3.eu-north-1.amazonaws.com/Gulf+only+logo.png"
-              alt="Gulf Coast Capital Logo"
+              alt="Global Coast Capital Logo"
               className="w-16 h-16 md:w-20 md:h-20 object-contain hover:scale-110 transition-transform duration-300"
             />
             <div className="font-bold leading-tight">
               <div className="text-lg sm:text-2xl md:text-3xl bg-gradient-to-r from-blue-400 via-blue-300 to-blue-200 bg-clip-text text-transparent tracking-wide shadow-lg">
-                Gulf Coast Capital
+                Global Coast Capital
               </div>
               <div className="text-sm sm:text-lg md:text-xl bg-gradient-to-r from-blue-300 via-blue-200 to-blue-100 bg-clip-text text-transparent tracking-wide">
                 & Investment
@@ -179,7 +179,7 @@ function AboutSection() {
             className=" text-gray-300 mb-8 leading-relaxed"
             style={{ fontSize: "18px" }}
           >
-            Gulf Coast Capital & Investment is a trusted partner in your
+            Global Coast Capital & Investment is a trusted partner in your
             financial journey. With years of expertise in asset management,
             private equity, and investment advisory, we help individuals and
             businesses achieve their financial aspirations. Our mission is to
@@ -280,7 +280,7 @@ function WhyUsSection() {
     >
       <div className="container mx-auto px-6">
         <h2 className="text-3xl sm:text-4xl font-bold mb-10 md:mb-16 text-center bg-gradient-to-r from-blue-400 via-blue-300 to-blue-200 bg-clip-text text-transparent tracking-wide shadow-lg">
-          Why Gulf Coast Capital & Investment?
+          Why Global Coast Capital & Investment?
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
           {features.map((feature, index) => (
@@ -301,12 +301,12 @@ function Footer() {
         <div className="flex items-center space-x-4">
             <img
               src="https://image11112024.s3.eu-north-1.amazonaws.com/Gulf+only+logo.png"
-              alt="Gulf Coast Capital Logo"
+              alt="Global Coast Capital Logo"
               className="w-16 h-16 md:w-20 md:h-20 object-contain hover:scale-110 transition-transform duration-300"
             />
             <div className="font-bold leading-tight">
               <div className="text-lg sm:text-2xl md:text-3xl bg-gradient-to-r from-blue-400 via-blue-300 to-blue-200 bg-clip-text text-transparent tracking-wide shadow-lg">
-                Gulf Coast Capital
+                Global Coast Capital
               </div>
               <div className="text-sm sm:text-lg md:text-xl bg-gradient-to-r from-blue-300 via-blue-200 to-blue-100 bg-clip-text text-transparent tracking-wide">
                 & Investment
@@ -326,7 +326,7 @@ function Footer() {
           </div>
         </div>
         <div className="text-center text-gray-500 text-sm">
-          © 2025 Gulf Coast Capital & Investment. All rights reserved.
+          © 2025 Global Coast Capital & Investment. All rights reserved.
         </div>
       </div>
     </footer>
